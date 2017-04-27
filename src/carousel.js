@@ -39,8 +39,8 @@ const Carousel = class extends React.Component {
 
   mixins: [tweenState.Mixin]
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       currentSlide: this.props.slideIndex,
       dragging: false,
