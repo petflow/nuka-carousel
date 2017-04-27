@@ -576,7 +576,6 @@ const Carousel = class extends React.Component {
 
   formatChildren(children) {
     var self = this;
-    console.log("HEYYYYY", this);
     var positionValue = this.props.vertical ? this.getTweeningValue('top') : this.getTweeningValue('left');
     return React.Children.map(children, function(child, index) {
       return <li className="slider-slide" style={self.getSlideStyles(index, positionValue)} key={index}>{child}</li>
