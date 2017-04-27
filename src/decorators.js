@@ -5,6 +5,11 @@ import React from 'react';
 const DefaultDecorators = [
   {
     component: class extends React.Component {
+      constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+      }
+
       render() {
         return (
           <button
@@ -34,6 +39,11 @@ const DefaultDecorators = [
   },
   {
     component: class extends React.Component {
+      constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+      }
+
       render() {
         return (
           <button
