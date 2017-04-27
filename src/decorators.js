@@ -5,8 +5,8 @@ import React from 'react';
 const DefaultDecorators = [
   {
     component: class extends React.Component {
-      constructor() {
-        super();
+      constructor(props) {
+        super(props);
         this.handleClick = this.handleClick.bind(this);
       }
 
@@ -39,8 +39,8 @@ const DefaultDecorators = [
   },
   {
     component: class extends React.Component {
-      constructor() {
-        super();
+      constructor(props) {
+        super(props);
         this.handleClick = this.handleClick.bind(this);
       }
 
