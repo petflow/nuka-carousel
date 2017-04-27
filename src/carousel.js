@@ -7,6 +7,7 @@ import tweenState from 'kw-react-tween-state';
 import decorators from './decorators';
 import assign from 'object-assign';
 import ExecutionEnvironment from 'exenv';
+var reactMixin = require('react-mixin');
 
 const addEvent = function(elem, type, eventHandle) {
   if (elem === null || typeof (elem) === 'undefined') {
@@ -36,8 +37,6 @@ const removeEvent = function(elem, type, eventHandle) {
 
 const Carousel = class extends React.Component {
   displayName: 'Carousel'
-
-  mixins: [tweenState.Mixin]
 
   constructor(props) {
     super(props);
@@ -845,6 +844,9 @@ const Carousel = class extends React.Component {
     }
   }
 };
+
+
+reactMixin.onClass(Carousel, tweenState.Mixin);
 
 Carousel.propTypes = {
   afterSlide: PropTypes.func,
