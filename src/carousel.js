@@ -7,6 +7,7 @@ import tweenState from 'kw-react-tween-state';
 import decorators from './decorators';
 import assign from 'object-assign';
 import ExecutionEnvironment from 'exenv';
+console.log(PropTypes.oneOf);
 
 const addEvent = function(elem, type, eventHandle) {
   if (elem === null || typeof (elem) === 'undefined') {
@@ -35,58 +36,62 @@ const removeEvent = function(elem, type, eventHandle) {
 };
 
 const Carousel = class extends React.Component {
+  constructor() {
+    super();
+
+    this.propTypes = {
+      afterSlide: PropTypes.func,
+      autoplay: PropTypes.bool,
+      autoplayInterval: PropTypes.number,
+      beforeSlide: PropTypes.func,
+      cellAlign: PropTypes.oneOf(['left', 'center', 'right']),
+      cellSpacing: PropTypes.number,
+      data: PropTypes.func,
+      decorators: PropTypes.arrayOf(
+        PropTypes.shape({
+          component: PropTypes.func,
+          position: PropTypes.oneOf([
+            'TopLeft',
+            'TopCenter',
+            'TopRight',
+            'CenterLeft',
+            'CenterCenter',
+            'CenterRight',
+            'BottomLeft',
+            'BottomCenter',
+            'BottomRight'
+          ]),
+          style: PropTypes.object
+        })
+      ),
+      dragging: PropTypes.bool,
+      easing: PropTypes.string,
+      edgeEasing: PropTypes.string,
+      framePadding: PropTypes.string,
+      frameOverflow: PropTypes.string,
+      initialSlideHeight: PropTypes.number,
+      initialSlideWidth: PropTypes.number,
+      slideIndex: PropTypes.number,
+      slidesToShow: PropTypes.number,
+      slidesToScroll: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.oneOf(['auto'])
+      ]),
+      slideWidth: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      speed: PropTypes.number,
+      swiping: PropTypes.bool,
+      vertical: PropTypes.bool,
+      width: PropTypes.string,
+      wrapAround: PropTypes.bool,
+    };
+  }
+
   displayName: 'Carousel'
 
   mixins: [tweenState.Mixin]
-
-  propTypes: {
-    afterSlide: PropTypes.func,
-    autoplay: PropTypes.bool,
-    autoplayInterval: PropTypes.number,
-    beforeSlide: PropTypes.func,
-    cellAlign: PropTypes.oneOf(['left', 'center', 'right']),
-    cellSpacing: PropTypes.number,
-    data: PropTypes.func,
-    decorators: PropTypes.arrayOf(
-      PropTypes.shape({
-        component: PropTypes.func,
-        position: PropTypes.oneOf([
-          'TopLeft',
-          'TopCenter',
-          'TopRight',
-          'CenterLeft',
-          'CenterCenter',
-          'CenterRight',
-          'BottomLeft',
-          'BottomCenter',
-          'BottomRight'
-        ]),
-        style: PropTypes.object
-      })
-    )
-    dragging: PropTypes.bool,
-    easing: PropTypes.string,
-    edgeEasing: PropTypes.string,
-    framePadding: PropTypes.string,
-    frameOverflow: PropTypes.string,
-    initialSlideHeight: PropTypes.number,
-    initialSlideWidth: PropTypes.number,
-    slideIndex: PropTypes.number,
-    slidesToShow: PropTypes.number,
-    slidesToScroll: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.oneOf(['auto'])
-    ]),
-    slideWidth: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    speed: PropTypes.number,
-    swiping: PropTypes.bool,
-    vertical: PropTypes.bool,
-    width: PropTypes.string,
-    wrapAround: PropTypes.bool,
-  }
 
   getDefaultProps() {
     return {
@@ -705,7 +710,7 @@ const Carousel = class extends React.Component {
       left: this.props.vertical ? 0 : this.getTargetLeft(),
       top: this.props.vertical ? this.getTargetLeft() : 0
     })
-  },
+  }
 
   // Data
 

@@ -61,7 +61,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenwheeler/nuka-carousel.git"
+    "url": "https://github.com/petflow/nuka-carousel.git"
   },
   "keywords": [
     "react",
@@ -71,7 +71,7 @@
   "author": "Ken Wheeler",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kenwheeler/nuka-carousel/issues"
+    "url": "https://github.com/petflow/nuka-carousel/issues"
   },
-  "homepage": "https://github.com/kenwheeler/nuka-carousel"
+  "homepage": "https://github.com/petflow/nuka-carousel"
 }
