@@ -6,7 +6,7 @@
   "dependencies": {
     "exenv": "^1.2.0",
     "object-assign": "^4.1.0",
-    "react-mixin": "^3.0.5",
+    "react-mixin": "2",
     "react-tween-state": "chenglou/react-tween-state"
   },
   "devDependencies": {

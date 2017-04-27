@@ -879,7 +879,6 @@ const Carousel = class extends React.Component {
   }
 };
 
-
 reactMixin.onClass(Carousel, tweenState.Mixin);
 
 Carousel.propTypes = {
