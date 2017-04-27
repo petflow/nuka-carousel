@@ -51,7 +51,45 @@ const Carousel = class extends React.Component {
       top: 0
     }
 
+    // @TODO Refactor to array + loop, make this a little more concise
     this.onReadyStateChange = this.onReadyStateChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.getTouchEvents = this.getTouchEvents.bind(this);
+    this.getMouseEvents = this.getMouseEvents.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
+    this.onMouseOut = this.onMouseOut.bind(this);
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.onMouseUp= this.onMouseUp.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.handleMouseOver = this.handleMouseOver.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSwipe = this.handleSwipe.bind(this);
+    this.swipeDirection = this.swipeDirection.bind(this);
+    this.autoplayIterator = this.autoplayIterator.bind(this);
+    this.startAutoplay = this.startAutoplay.bind(this);
+    this.resetAutoplay = this.resetAutoplay.bind(this);
+    this.stopAutoplay = this.stopAutoplay.bind(this);
+    this.goToSlide = this.goToSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.animateSlide = this.animateSlide.bind(this);
+    this.getTargetLeft = this.getTargetLeft.bind(this);
+    this.bindEvents = this.bindEvents.bind(this);
+    this.onResize = this.onResize.bind(this);
+    this.onReadyStateChange = this.onReadyStateChange.bind(this);
+    this.unbindEvents = this.unbindEvents.bind(this);
+    this.formatChildren = this.formatChildren.bind(this);
+    this.setInitialDimensions = this.setInitialDimensions.bind(this);
+    this.setDimensions = this.setDimensions.bind(this);
+    this.setLeft = this.setLeft.bind(this);
+    this.setExternalData = this.setExternalData.bind(this);
+    this.getListStyles = this.getListStyles.bind(this);
+    this.getFrameStyles = this.getFrameStyles.bind(this);
+    this.getSlideStyles = this.getSlideStyles.bind(this);
+    this.getSlideTargetPosition = this.getSlideTargetPosition.bind(this);
+    this.getSliderStyles = this.getSliderStyles.bind(this);
   }
 
   componentWillMount() {
