@@ -4,18 +4,20 @@ import React from 'react';
 
 const DefaultDecorators = [
   {
-    component: React.createClass({
+    component: class extends React.Component {
       render() {
         return (
           <button
             style={this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround)}
             onClick={this.handleClick}>PREV</button>
         )
-      },
+      }
+
       handleClick(e) {
         e.preventDefault();
         this.props.previousSlide();
-      },
+      }
+
       getButtonStyles(disabled) {
         return {
           border: 0,
@@ -27,22 +29,24 @@ const DefaultDecorators = [
           cursor: 'pointer'
         }
       }
-    }),
+    },
     position: 'CenterLeft'
   },
   {
-    component: React.createClass({
+    component: class extends React.Component {
       render() {
         return (
           <button
             style={this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount && !this.props.wrapAround)}
             onClick={this.handleClick}>NEXT</button>
         )
-      },
+      }
+
       handleClick(e) {
         e.preventDefault();
         this.props.nextSlide();
-      },
+      }
+
       getButtonStyles(disabled) {
         return {
           border: 0,
@@ -54,11 +58,11 @@ const DefaultDecorators = [
           cursor: 'pointer'
         }
       }
-    }),
+    },
     position: 'CenterRight'
   },
   {
-    component: React.createClass({
+    component: class extends React.Component {
       render() {
         var self = this;
         var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
@@ -79,14 +83,16 @@ const DefaultDecorators = [
             }
           </ul>
         )
-      },
+      }
+
       getIndexes(count, inc) {
         var arr = [];
         for (var i = 0; i < count; i += inc) {
           arr.push(i);
         }
         return arr;
-      },
+      }
+
       getListStyles() {
         return {
           position: 'relative',
@@ -94,13 +100,15 @@ const DefaultDecorators = [
           top: -10,
           padding: 0
         }
-      },
+      }
+
       getListItemStyles() {
         return {
           listStyleType: 'none',
           display: 'inline-block'
         }
-      },
+      }
+
       getButtonStyles(active) {
         return {
           border: 0,
@@ -113,7 +121,7 @@ const DefaultDecorators = [
           opacity: active ? 1 : 0.5
         }
       }
-    }),
+    },
     position: 'BottomCenter'
   }
 ];
