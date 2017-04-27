@@ -50,6 +50,8 @@ const Carousel = class extends React.Component {
       slideWidth: 0,
       top: 0
     }
+
+    this.onReadyStateChange = this.onReadyStateChange.bind(this);
   }
 
   componentWillMount() {
