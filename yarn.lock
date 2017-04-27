@@ -2864,13 +2864,6 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kw-react-tween-state@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/kw-react-tween-state/-/kw-react-tween-state-0.1.5.tgz#744088988d35f14ccc2ca36af96bc09ece7ab78b"
-  dependencies:
-    raf "^3.1.0"
-    tween-functions "^1.0.1"
-
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
@@ -4406,6 +4399,13 @@ react-mixin@^3.0.5:
   dependencies:
     object-assign "^4.0.1"
     smart-mixin "^2.0.0"
+
+react-tween-state@chenglou/react-tween-state:
+  version "0.1.5"
+  resolved "https://codeload.github.com/chenglou/react-tween-state/tar.gz/08f526e5acc5bea114c9072faaa71e6cf2a6a4d2"
+  dependencies:
+    raf "^3.1.0"
+    tween-functions "^1.0.1"
 
 react@^15.3.0:
   version "15.5.4"

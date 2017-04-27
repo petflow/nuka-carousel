@@ -3,13 +3,17 @@
 import Carousel from '../src/carousel';
 import React from 'react';
 import ReactDom from 'react-dom';
+var reactMixin = require('react-mixin');
 
 window.React = React;
 
-const App = React.createClass({
-  mixins: [Carousel.ControllerMixin],
-
-  getInitialState() { return { slideIndex: 0 }; },
+const App = class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideIndex: 0
+    };
+  }
 
   render() {
     return (
@@ -35,7 +39,9 @@ const App = React.createClass({
       </div>
     )
   }
-});
+};
+
+reactMixin.onClass(App, Carousel.ControllerMixin);
 
 const content = document.getElementById('content');
 
