@@ -7,7 +7,6 @@ import tweenState from 'kw-react-tween-state';
 import decorators from './decorators';
 import assign from 'object-assign';
 import ExecutionEnvironment from 'exenv';
-console.log(PropTypes.oneOf);
 
 const addEvent = function(elem, type, eventHandle) {
   if (elem === null || typeof (elem) === 'undefined') {
@@ -36,92 +35,13 @@ const removeEvent = function(elem, type, eventHandle) {
 };
 
 const Carousel = class extends React.Component {
-  constructor() {
-    super();
-
-    this.propTypes = {
-      afterSlide: PropTypes.func,
-      autoplay: PropTypes.bool,
-      autoplayInterval: PropTypes.number,
-      beforeSlide: PropTypes.func,
-      cellAlign: PropTypes.oneOf(['left', 'center', 'right']),
-      cellSpacing: PropTypes.number,
-      data: PropTypes.func,
-      decorators: PropTypes.arrayOf(
-        PropTypes.shape({
-          component: PropTypes.func,
-          position: PropTypes.oneOf([
-            'TopLeft',
-            'TopCenter',
-            'TopRight',
-            'CenterLeft',
-            'CenterCenter',
-            'CenterRight',
-            'BottomLeft',
-            'BottomCenter',
-            'BottomRight'
-          ]),
-          style: PropTypes.object
-        })
-      ),
-      dragging: PropTypes.bool,
-      easing: PropTypes.string,
-      edgeEasing: PropTypes.string,
-      framePadding: PropTypes.string,
-      frameOverflow: PropTypes.string,
-      initialSlideHeight: PropTypes.number,
-      initialSlideWidth: PropTypes.number,
-      slideIndex: PropTypes.number,
-      slidesToShow: PropTypes.number,
-      slidesToScroll: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.oneOf(['auto'])
-      ]),
-      slideWidth: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-      ]),
-      speed: PropTypes.number,
-      swiping: PropTypes.bool,
-      vertical: PropTypes.bool,
-      width: PropTypes.string,
-      wrapAround: PropTypes.bool,
-    };
-  }
-
   displayName: 'Carousel'
 
   mixins: [tweenState.Mixin]
 
-  getDefaultProps() {
-    return {
-      afterSlide: function() { },
-      autoplay: false,
-      autoplayInterval: 3000,
-      beforeSlide: function() { },
-      cellAlign: 'left',
-      cellSpacing: 0,
-      data: function() {},
-      decorators: decorators,
-      dragging: true,
-      easing: 'easeOutCirc',
-      edgeEasing: 'easeOutElastic',
-      framePadding: '0px',
-      frameOverflow: 'hidden',
-      slideIndex: 0,
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      slideWidth: 1,
-      speed: 500,
-      swiping: true,
-      vertical: false,
-      width: '100%',
-      wrapAround: false
-    }
-  }
-
-  getInitialState() {
-    return {
+  constructor() {
+    super();
+    this.state = {
       currentSlide: this.props.slideIndex,
       dragging: false,
       frameWidth: 0,
@@ -924,6 +844,80 @@ const Carousel = class extends React.Component {
       }
     }
   }
+};
+
+Carousel.propTypes = {
+  afterSlide: PropTypes.func,
+  autoplay: PropTypes.bool,
+  autoplayInterval: PropTypes.number,
+  beforeSlide: PropTypes.func,
+  cellAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  cellSpacing: PropTypes.number,
+  data: PropTypes.func,
+  decorators: PropTypes.arrayOf(
+    PropTypes.shape({
+      component: PropTypes.func,
+      position: PropTypes.oneOf([
+        'TopLeft',
+        'TopCenter',
+        'TopRight',
+        'CenterLeft',
+        'CenterCenter',
+        'CenterRight',
+        'BottomLeft',
+        'BottomCenter',
+        'BottomRight'
+      ]),
+      style: PropTypes.object
+    })
+  ),
+  dragging: PropTypes.bool,
+  easing: PropTypes.string,
+  edgeEasing: PropTypes.string,
+  framePadding: PropTypes.string,
+  frameOverflow: PropTypes.string,
+  initialSlideHeight: PropTypes.number,
+  initialSlideWidth: PropTypes.number,
+  slideIndex: PropTypes.number,
+  slidesToShow: PropTypes.number,
+  slidesToScroll: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(['auto'])
+  ]),
+  slideWidth: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  speed: PropTypes.number,
+  swiping: PropTypes.bool,
+  vertical: PropTypes.bool,
+  width: PropTypes.string,
+  wrapAround: PropTypes.bool,
+};
+
+Carousel.defaultProps = {
+  afterSlide: function() { },
+  autoplay: false,
+  autoplayInterval: 3000,
+  beforeSlide: function() { },
+  cellAlign: 'left',
+  cellSpacing: 0,
+  data: function() {},
+  decorators: decorators,
+  dragging: true,
+  easing: 'easeOutCirc',
+  edgeEasing: 'easeOutElastic',
+  framePadding: '0px',
+  frameOverflow: 'hidden',
+  slideIndex: 0,
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  slideWidth: 1,
+  speed: 500,
+  swiping: true,
+  vertical: false,
+  width: '100%',
+  wrapAround: false
 };
 
 Carousel.ControllerMixin = {
