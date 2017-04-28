@@ -707,7 +707,7 @@ const Carousel = class extends React.Component {
       overflow: this.props.frameOverflow,
       height: this.props.vertical ? this.state.frameWidth || 'initial' : 'auto',
       margin: this.props.framePadding,
-      padding: 0,
+      padding: '0 40px',
       transform: 'translate3d(0, 0, 0)',
       WebkitTransform: 'translate3d(0, 0, 0)',
       msTransform: 'translate(0, 0)',
