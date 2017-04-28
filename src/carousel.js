@@ -766,7 +766,7 @@ const Carousel = class extends React.Component {
     return {
       position: 'relative',
       display: 'block',
-      width: this.props.width,
+      width: `calc(${this.props.width} - 80px)`,
       height: 'auto',
       boxSizing: 'border-box',
       MozBoxSizing: 'border-box',
