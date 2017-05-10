@@ -860,6 +860,17 @@ const Carousel = class extends React.Component {
           msTransform: 'translateX(-50%)'
         };
       }
+    case 'Below':
+      {
+        return {
+          position: 'absolute',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%) translateY(100%)',
+          WebkitTransform: 'translateX(-50%)',
+          msTransform: 'translateX(-50%)'
+        };
+      }
     case 'BottomRight':
       {
         return {
