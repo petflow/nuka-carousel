@@ -913,7 +913,8 @@ Carousel.propTypes = {
         'CenterRight',
         'BottomLeft',
         'BottomCenter',
-        'BottomRight'
+        'BottomRight',
+        'Below'
       ]),
       style: PropTypes.object
     })
